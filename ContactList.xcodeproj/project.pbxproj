@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0D28F0132801DAC2005FC1FC /* ContactListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28F0122801DAC2005FC1FC /* ContactListApp.swift */; };
-		0D28F0152801DAC2005FC1FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28F0142801DAC2005FC1FC /* ContentView.swift */; };
+		0D28F0152801DAC2005FC1FC /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28F0142801DAC2005FC1FC /* ContactView.swift */; };
 		0D28F0172801DAC3005FC1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D28F0162801DAC3005FC1FC /* Assets.xcassets */; };
 		0D28F01A2801DAC3005FC1FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D28F0192801DAC3005FC1FC /* Preview Assets.xcassets */; };
+		0D28F0232801DCC9005FC1FC /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28F0222801DCC9005FC1FC /* Contact.swift */; };
+		0D28F0262801DF49005FC1FC /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28F0252801DF49005FC1FC /* ContactModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D28F00F2801DAC2005FC1FC /* ContactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D28F0122801DAC2005FC1FC /* ContactListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListApp.swift; sourceTree = "<group>"; };
-		0D28F0142801DAC2005FC1FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0D28F0142801DAC2005FC1FC /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		0D28F0162801DAC3005FC1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D28F0192801DAC3005FC1FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D28F0222801DCC9005FC1FC /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		0D28F0252801DF49005FC1FC /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				0D28F0122801DAC2005FC1FC /* ContactListApp.swift */,
-				0D28F0142801DAC2005FC1FC /* ContentView.swift */,
+				0D28F0242801DEE7005FC1FC /* ViewModel */,
+				0D28F0212801DC63005FC1FC /* Model */,
+				0D28F0202801DC20005FC1FC /* Views */,
 				0D28F0162801DAC3005FC1FC /* Assets.xcassets */,
 				0D28F0182801DAC3005FC1FC /* Preview Content */,
 			);
@@ -65,6 +71,30 @@
 				0D28F0192801DAC3005FC1FC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0D28F0202801DC20005FC1FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D28F0142801DAC2005FC1FC /* ContactView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D28F0212801DC63005FC1FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D28F0222801DCC9005FC1FC /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D28F0242801DEE7005FC1FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D28F0252801DF49005FC1FC /* ContactModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D28F0152801DAC2005FC1FC /* ContentView.swift in Sources */,
+				0D28F0232801DCC9005FC1FC /* Contact.swift in Sources */,
+				0D28F0152801DAC2005FC1FC /* ContactView.swift in Sources */,
+				0D28F0262801DF49005FC1FC /* ContactModel.swift in Sources */,
 				0D28F0132801DAC2005FC1FC /* ContactListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +309,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +339,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ContactListApp: App {
+    @StateObject var contacts: ContactModel = ContactModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContactView(contacts: contacts)
+                    .navigationTitle("Contacts")
+                    .navigationViewStyle(.stack)
+            }
+            
         }
     }
 }
