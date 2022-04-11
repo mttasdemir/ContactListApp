@@ -12,12 +12,19 @@ struct ContactListApp: App {
     @StateObject var contacts: ContactModel = ContactModel()
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContactView(contacts: contacts)
-                    .navigationTitle("Contacts")
-                    .navigationViewStyle(.stack)
+            TabView {
+                ContactView()
+                    .tabItem {
+                        Image(systemName: "person.circle")
+                        Text("Contacts")
+                    }
+                FavoriteView()
+                    .tabItem {
+                        Image(systemName: "star.fill")
+                        Text("Favorites")
+                    }
             }
-            
+            .environmentObject(contacts)
         }
     }
 }
