@@ -15,8 +15,12 @@
 		0D28F01A2801DAC3005FC1FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D28F0192801DAC3005FC1FC /* Preview Assets.xcassets */; };
 		0D28F0232801DCC9005FC1FC /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28F0222801DCC9005FC1FC /* Contact.swift */; };
 		0D28F0262801DF49005FC1FC /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28F0252801DF49005FC1FC /* ContactModel.swift */; };
+		0D37BF35280C26D8005F5B0A /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37BF34280C26D8005F5B0A /* ContactDetailView.swift */; };
+		0D37BF37280C39FC005F5B0A /* RoundedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37BF36280C39FC005F5B0A /* RoundedBackground.swift */; };
 		0D4953C5280346B300AE11A3 /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4953C4280346B300AE11A3 /* ContactRowView.swift */; };
 		0D5ECE5B2803803A002CFCFA /* NewContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5ECE5A2803803A002CFCFA /* NewContactView.swift */; };
+		0DAB842C2808C6B900F64FE6 /* PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB842B2808C6B900F64FE6 /* PhoneNumberFormatter.swift */; };
+		0DAB842E2808CEDA00F64FE6 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB842D2808CEDA00F64FE6 /* PhoneNumberView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +33,12 @@
 		0D28F0192801DAC3005FC1FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0D28F0222801DCC9005FC1FC /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		0D28F0252801DF49005FC1FC /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		0D37BF34280C26D8005F5B0A /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		0D37BF36280C39FC005F5B0A /* RoundedBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackground.swift; sourceTree = "<group>"; };
 		0D4953C4280346B300AE11A3 /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
 		0D5ECE5A2803803A002CFCFA /* NewContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactView.swift; sourceTree = "<group>"; };
+		0DAB842B2808C6B900F64FE6 /* PhoneNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatter.swift; sourceTree = "<group>"; };
+		0DAB842D2808CEDA00F64FE6 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1E13AE280312EA00FE4E57 /* Extensions.swift */,
+				0DAB842B2808C6B900F64FE6 /* PhoneNumberFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -94,9 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				0D28F0142801DAC2005FC1FC /* ContactView.swift */,
+				0D37BF34280C26D8005F5B0A /* ContactDetailView.swift */,
 				0D1E13AB2802FFF200FE4E57 /* FavoriteView.swift */,
 				0D4953C4280346B300AE11A3 /* ContactRowView.swift */,
 				0D5ECE5A2803803A002CFCFA /* NewContactView.swift */,
+				0DAB842D2808CEDA00F64FE6 /* PhoneNumberView.swift */,
+				0D37BF36280C39FC005F5B0A /* RoundedBackground.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,13 +200,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5ECE5B2803803A002CFCFA /* NewContactView.swift in Sources */,
+				0DAB842C2808C6B900F64FE6 /* PhoneNumberFormatter.swift in Sources */,
 				0D28F0232801DCC9005FC1FC /* Contact.swift in Sources */,
 				0D4953C5280346B300AE11A3 /* ContactRowView.swift in Sources */,
 				0D1E13AF280312EA00FE4E57 /* Extensions.swift in Sources */,
 				0D28F0152801DAC2005FC1FC /* ContactView.swift in Sources */,
+				0DAB842E2808CEDA00F64FE6 /* PhoneNumberView.swift in Sources */,
 				0D28F0262801DF49005FC1FC /* ContactModel.swift in Sources */,
 				0D1E13AC2802FFF200FE4E57 /* FavoriteView.swift in Sources */,
+				0D37BF35280C26D8005F5B0A /* ContactDetailView.swift in Sources */,
 				0D28F0132801DAC2005FC1FC /* ContactListApp.swift in Sources */,
+				0D37BF37280C39FC005F5B0A /* RoundedBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

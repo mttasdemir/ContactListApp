@@ -39,5 +39,10 @@ class ContactModel: ObservableObject {
             contacts.remove(at: index)
         }
     }
+    
+    func index(of contact: Contact) -> Int {
+        contacts.index(of: contact)!
+    }
+    
 }
 

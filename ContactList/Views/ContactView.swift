@@ -14,19 +14,22 @@ struct ContactView: View {
     @State private var newContact: Contact = Contact.empty
     @State private var isDeleting: Bool = false
     @State private var activeContact: Contact = Contact.empty
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(searchResult) { contact in
-                    ContactRowView(contact: contact)
-                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                            Button(role: .destructive) {
-                                activeContact = contact
-                                isDeleting = true
-                            } label: {
-                                Image(systemName: "minus.circle.fill")
-                            }
+                    NavigationLink(destination: ContactDetailView(contact: $contacts.contacts[contacts.index(of: contact)])) {
+                        ContactRowView(contact: contact)
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(role: .destructive) {
+                            activeContact = contact
+                            isDeleting = true
+                        } label: {
+                            Image(systemName: "minus.circle.fill")
                         }
+                    }
                 }
             }
             .searchable(text: $searchText)

@@ -8,9 +8,11 @@
 import Foundation
 
 struct Contact: Identifiable, Equatable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var name: String
     var surname: String
+    var phone: String = ""
+    var birthday: Date?
     var isFavorite: Bool = false
     
     var fullname: String {
@@ -19,6 +21,16 @@ struct Contact: Identifiable, Equatable {
     
     var isValid: Bool {
         !(name.isEmpty || surname.isEmpty)
+    }
+    
+    var birthdayDesc: String {
+        guard let birthday = birthday else { return "Add birthday"}
+        return DateFormatter.trDateFormatter.string(from: birthday)
+    }
+    
+    var birthdayComponents: DateComponents? {
+        guard let birthday = birthday else { return nil }
+        return Calendar.current.dateComponents([.year, .month, .weekOfMonth, .day], from: birthday, to: Date.now)
     }
     
     mutating func inValidate() {
