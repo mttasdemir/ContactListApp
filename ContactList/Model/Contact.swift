@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Contact: Identifiable, Equatable {
+struct Contact: Identifiable, Equatable, Codable {
     var id: UUID = UUID()
     var name: String
     var surname: String
@@ -62,5 +62,7 @@ extension Contact {
 }
 
 extension Contact {
-    static var empty: Contact = Contact(name: "", surname: "")
+    static func empty() -> Contact {
+        Contact(name: "", surname: "")
+    }
 }

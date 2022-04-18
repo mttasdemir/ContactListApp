@@ -11,9 +11,12 @@ struct ContactView: View {
     @EnvironmentObject var contacts: ContactModel
     @State private var searchText: String = ""
     @State private var addNewContact: Bool = false
-    @State private var newContact: Contact = Contact.empty
+    @State private var newContact: Contact = Contact.empty()
     @State private var isDeleting: Bool = false
-    @State private var activeContact: Contact = Contact.empty
+    @State private var activeContact: Contact = Contact.empty()
+    
+    @State private var didError: Bool = false
+    @State private var errorMsg: String = ""
     
     var body: some View {
         NavigationView {
@@ -46,6 +49,20 @@ struct ContactView: View {
             }
         }
         .overlay(confirmDelete)
+        .task {
+            do {
+                try await contacts.load()
+            }
+            catch(let error) {
+                didError = true
+                errorMsg = error.localizedDescription
+            }
+        }
+        .alert("Error", isPresented: $didError) {
+            Button("OK") {}
+        } message: {
+            Text("Couldn't load/save **Contact List** \n \(errorMsg)")
+        }
     }
     
     var confirmDelete: some View {
@@ -93,9 +110,14 @@ struct ContactView: View {
     
     func addContact() {
         if newContact.isValid {
-            contacts.addContact(newContact)
+            do {
+                try contacts.addContact(newContact)
+            } catch {
+                didError = true
+                errorMsg = error.localizedDescription
+            }
         }
-        newContact = Contact.empty
+        newContact = Contact.empty()
     }
     
 }

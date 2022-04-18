@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContactDetailView: View {
+    @EnvironmentObject var contactModel: ContactModel
     @Binding var contact: Contact
     @State private var editting: Bool = false
-    @State private var editedContact: Contact = Contact.empty
+    @State private var editedContact: Contact = Contact.empty()
     var body: some View {
         VStack {
             Text(contact.fullname)
@@ -55,8 +56,7 @@ struct ContactDetailView: View {
     
     func updateContact() {
         if editedContact.isValid {
-            editedContact.id = contact.id
-            contact = editedContact
+            contactModel.update(contact, by: editedContact)
         }
     }
 }
@@ -64,5 +64,6 @@ struct ContactDetailView: View {
 struct ContactDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ContactDetailView(contact: .constant(Contact.sampleContacts[0]))
+            .environmentObject(ContactModel())
     }
 }

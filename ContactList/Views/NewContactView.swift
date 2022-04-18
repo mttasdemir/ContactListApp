@@ -27,7 +27,7 @@ struct NewContactView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        newContact = Contact.empty
+                        newContact = Contact.empty()
                         dismiss()
                     }
                 }
