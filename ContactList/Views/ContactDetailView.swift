@@ -14,6 +14,7 @@ struct ContactDetailView: View {
     @State private var editedContact: Contact = Contact.empty()
     var body: some View {
         VStack {
+            ContactViewHeader(contact: contact)
             Text(contact.fullname)
                 .font(.title)
                 .fontWeight(.semibold)
@@ -39,8 +40,9 @@ struct ContactDetailView: View {
                 }
             }
             .font(.title3)
+            .padding()
         }
-        .padding()
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button ("Edit") {

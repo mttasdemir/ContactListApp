@@ -23,6 +23,12 @@ struct Contact: Identifiable, Equatable, Codable {
         !(name.isEmpty || surname.isEmpty)
     }
     
+    var firstLetters: String? {
+        let firstLetters = (name.isEmpty ? "" : String(name.first!)) +
+                           (surname.isEmpty ? "" : String(surname.first!))
+        return firstLetters.isEmpty ? nil : firstLetters
+    }
+    
     var birthdayDesc: String {
         guard let birthday = birthday else { return "Add birthday"}
         return DateFormatter.trDateFormatter.string(from: birthday)

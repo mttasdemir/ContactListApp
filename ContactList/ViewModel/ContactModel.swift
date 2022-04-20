@@ -25,7 +25,7 @@ class ContactModel: ObservableObject {
     // MARK: - intents
     
     private var fileUrl: URL?
-    
+    //xcrun simctl get_app_container booted tr.tasdemir.app.test.ContactList data
     private func getFileUrl() throws -> URL {
         guard fileUrl == nil else { return fileUrl! }
         let fileManager = FileManager.default

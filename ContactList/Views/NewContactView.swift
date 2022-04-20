@@ -14,28 +14,33 @@ struct NewContactView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                TextField("First Name", text: $newContact.name, prompt: Text("First name"))
-                TextField("Last Name", text: $newContact.surname, prompt: Text("Last name"))
-                Toggle("Favorite", isOn: $newContact.isFavorite)
-                PhoneNumberView(phoneNumber: $newContact.phone)
-                Text(newContact.birthdayDesc)
-                    .onTapGesture {
-                        showDatePicker.toggle()
-                    }
-            }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        newContact = Contact.empty()
-                        dismiss()
-                    }
+            VStack {
+                ContactViewHeader(contact: newContact)
+                List {
+                    TextField("First Name", text: $newContact.name, prompt: Text("First name"))
+                    TextField("Last Name", text: $newContact.surname, prompt: Text("Last name"))
+                    Toggle("Favorite", isOn: $newContact.isFavorite)
+                    PhoneNumberView(phoneNumber: $newContact.phone)
+                    Text(newContact.birthdayDesc)
+                        .onTapGesture {
+                            showDatePicker.toggle()
+                        }
                 }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
-                        dismiss()
+                .navigationTitle("New Contact")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            newContact = Contact.empty()
+                            dismiss()
+                        }
                     }
-                    .disabled(!newContact.isValid)
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done") {
+                            dismiss()
+                        }
+                        .disabled(!newContact.isValid)
+                    }
                 }
             }
         }
